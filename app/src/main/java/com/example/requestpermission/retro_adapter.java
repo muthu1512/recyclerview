@@ -1,5 +1,6 @@
 package com.example.requestpermission;
 
+import android.content.Context;
 import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -8,6 +9,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.fragment.app.FragmentActivity;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
@@ -15,11 +17,12 @@ import java.util.ArrayList;
 public class retro_adapter extends RecyclerView.Adapter<retro_adapter.viewholder>
 {
     ArrayList<const_retro> al;
+    private Context context;
 
-    public retro_adapter(ArrayList<const_retro> al) {
+    public retro_adapter(Context context, ArrayList<const_retro> al) {
         this.al = al;
+        this.context=context;
     }
-    View v;
 
 
     @NonNull
@@ -32,7 +35,7 @@ public class retro_adapter extends RecyclerView.Adapter<retro_adapter.viewholder
 
     @Override
     public void onBindViewHolder(@NonNull viewholder holder, int position) {
-        holder.id.setText(al.get(position).getId());
+        holder.id.setText(al.get(position).getId().toString());
         holder.Title.setText(al.get(position).getTitle());
         holder.status.setText(al.get(position).getCompleted().toString());
         if (al.get( position ).getCompleted().toString() == "true"){
