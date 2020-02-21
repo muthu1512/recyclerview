@@ -9,7 +9,6 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.GridLayoutManager;
-import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
@@ -22,19 +21,21 @@ public class gridview extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-
-        v = inflater.inflate(R.layout.recycle1, container, false);
-        recycle = v.findViewById(R.id.recy);
-//        recycle.setLayoutManager(new LinearLayoutManager(getContext()));
-        recycle.setLayoutManager(new GridLayoutManager(getContext(),3));
-        list.add(new constructorRecycler(R.drawable.download, "img1"));
-        list.add(new constructorRecycler(R.drawable.inst, "Insta"));
-        list.add(new constructorRecycler(R.drawable.smile, "Smile"));
-        list.add(new constructorRecycler(R.drawable.login, "Login"));
-        RvAdapter adap = new RvAdapter(list);
-        recycle.setAdapter(adap);
-        recycle.setHasFixedSize(true);
+        if(v==null) {
+            v = inflater.inflate(R.layout.recycle1, container, false);
+            recycle = v.findViewById(R.id.recy);
+            recycle.setLayoutManager(new GridLayoutManager(getContext(), 3));
+            list.add(new constructorRecycler(R.drawable.download, "img1"));
+            list.add(new constructorRecycler(R.drawable.inst, "Insta"));
+            list.add(new constructorRecycler(R.drawable.smile, "Smile"));
+            list.add(new constructorRecycler(R.drawable.login, "Login"));
+            RvAdapter adap = new RvAdapter(list);
+            recycle.setAdapter(adap);
+            recycle.setHasFixedSize(true);
+        }
         return v;
     }
 
+    public static class retrofit {
+    }
 }

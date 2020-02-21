@@ -25,17 +25,18 @@ public class recycle1 extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-
-        v=inflater.inflate(R.layout.recycle1,container,false);
-        recycle=v.findViewById(R.id.recy);
-        recycle.setLayoutManager(new LinearLayoutManager(getContext()));
-        list.add(new constructorRecycler(R.drawable.download,"img1"));
-        list.add(new constructorRecycler(R.drawable.inst,"Insta"));
-        list.add(new constructorRecycler(R.drawable.smile,"Smile"));
-        list.add(new constructorRecycler(R.drawable.login,"Login"));
-        RvAdapter adap=new RvAdapter(list);
-        recycle.setAdapter(adap);
-        recycle.setHasFixedSize(true);
+if(v==null) {
+    v = inflater.inflate(R.layout.recycle1, container, false);
+    recycle = v.findViewById(R.id.recy);
+    recycle.setLayoutManager(new LinearLayoutManager(getContext()));
+    list.add(new constructorRecycler(R.drawable.download, "img1"));
+    list.add(new constructorRecycler(R.drawable.inst, "Insta"));
+    list.add(new constructorRecycler(R.drawable.smile, "Smile"));
+    list.add(new constructorRecycler(R.drawable.login, "Login"));
+    RvAdapter adap = new RvAdapter(list);
+    recycle.setAdapter(adap);
+    recycle.setHasFixedSize(true);
+           }
         return v;
 
     }
