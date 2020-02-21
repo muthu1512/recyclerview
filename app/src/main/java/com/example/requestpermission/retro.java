@@ -23,7 +23,7 @@ public class retro extends Fragment {
     private RecyclerView rv;
     private retro_adapter retroAdapter;
     private ProgressBar progressBar;
-    int i = 1, p = 1;
+    int i = 1, p = 2;
     int count = 10;
     public retro() {
     }
