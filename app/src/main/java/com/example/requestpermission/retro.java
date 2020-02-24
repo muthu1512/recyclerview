@@ -30,12 +30,12 @@ import retrofit2.http.Query;
 
 public class retro extends Fragment {
 
+
     View v;
     private RecyclerView.LayoutManager manager;
     ArrayList<const_retro> list = new ArrayList<>();
     private RecyclerView rv;
     private retro_adapter retroAdapter;
-    int i = 1, p = 2;
 
     public retro() {
     }
@@ -95,7 +95,7 @@ public class retro extends Fragment {
     }
     interface RequestInterface {
         @GET("todos")
-        Call<List<const_retro>> getresponse();
+        Call<List<const_retro>>getresponse();
     }
 
 }
