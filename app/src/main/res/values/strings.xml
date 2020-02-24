@@ -9,4 +9,8 @@
     <string name="confirm_password">Confirm Password</string>
     <string name="email">Email</string>
     <string name="upload">Upload</string>
+    <string name="user_name">User name</string>
+    <string name="password">Password</string>
+    <string name="new_user"><![CDATA[New user ->]]></string>
+    <string name="sign_up">Sign Up</string>
 </resources>
